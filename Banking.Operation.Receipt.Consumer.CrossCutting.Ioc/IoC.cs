@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Banking.Operation.Receipt.Consumer.CrossCutting.Ioc.Modules;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Banking.Operation.Receipt.Consumer.CrossCutting.Ioc.Modules;
 
 namespace Banking.Operation.Receipt.Consumer.CrossCutting.Ioc
 {
@@ -10,6 +10,7 @@ namespace Banking.Operation.Receipt.Consumer.CrossCutting.Ioc
         {
             DataModule.Register(services, configuration);
             services.Register(configuration);
+            AutoMapperModule.Register(services);
             return services;
         }
     }
