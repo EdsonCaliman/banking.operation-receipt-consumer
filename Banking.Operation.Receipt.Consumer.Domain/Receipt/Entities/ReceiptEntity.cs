@@ -1,15 +1,9 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System;
+﻿using System;
 
 namespace Banking.Operation.Receipt.Consumer.Domain.Receipt.Entities
 {
-    public class ReceiptEntity
+    public class ReceiptEntity : TEntityBase
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
         public Guid ReceiptId { get; set; }
         public Guid ClientId { get; set; }
         public string ClientName { get; set; }

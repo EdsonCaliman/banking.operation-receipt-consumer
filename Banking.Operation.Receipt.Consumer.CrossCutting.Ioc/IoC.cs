@@ -8,9 +8,11 @@ namespace Banking.Operation.Receipt.Consumer.CrossCutting.Ioc
     {
         public static IServiceCollection ConfigureContainer(this IServiceCollection services, IConfiguration configuration)
         {
+            MongoDbModule.Register(services, configuration);
             DataModule.Register(services, configuration);
-            services.Register(configuration);
             AutoMapperModule.Register(services);
+            services.Register(configuration);
+
             return services;
         }
     }

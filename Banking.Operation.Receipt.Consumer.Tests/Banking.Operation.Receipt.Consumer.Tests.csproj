@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.5.1" />
+    <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Banking.Operation.Receipt.Consumer.CrossCutting.Ioc\Banking.Operation.Receipt.Consumer.CrossCutting.Ioc.csproj" />
     <ProjectReference Include="..\Banking.Operation.Receipt.Consumer.Domain\Banking.Operation.Receipt.Consumer.Domain.csproj" />
   </ItemGroup>
 
