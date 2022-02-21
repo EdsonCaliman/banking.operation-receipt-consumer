@@ -1,11 +1,11 @@
 version: '3.4'
 
 services:
-  # banking.operation.receipt.consumer:
-  #   image: ${DOCKER_REGISTRY-}bankingoperationreceiptconsumer
-  #   build:
-  #     context: .
-  #     dockerfile: Banking.Operation.Receipt.Consumer.Worker/Dockerfile
+  banking.operation.receipt.consumer:
+    image: ${DOCKER_REGISTRY-}bankingoperationreceiptconsumer
+    build:
+      context: .
+      dockerfile: Banking.Operation.Receipt.Consumer.Worker/Dockerfile
 
   mongo:
     image: mongo
@@ -13,16 +13,7 @@ services:
   mongo-express:
     image: mongo-express
 
-  zookeeper:
-    image: confluentinc/cp-zookeeper:6.1.1
-
-  broker:
-    image: confluentinc/cp-kafka:6.1.1
-
-  viewer:
-    image: 'obsidiandynamics/kafdrop'
-
-# networks:
-#   default:
-#     external: true
-#     name: bankingoperation-client-api_backend
+networks:
+  default:
+    external: true
+    name: bankingoperation-client-api_backend

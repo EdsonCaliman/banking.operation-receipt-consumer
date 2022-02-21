@@ -10,7 +10,7 @@ namespace Banking.Operation.Receipt.Consumer.Domain.Receipt.Mapper
         {
             CreateMap<ReceiptDto, ReceiptEntity>()
             .ForMember(d => d.Id, act => act.Ignore())
-            .ForMember(d => d.ClientId, o => o.MapFrom(a => a.Id));
+            .ForMember(d => d.ReceiptId, o => o.MapFrom(a => a.Id));
         }
     }
 }
