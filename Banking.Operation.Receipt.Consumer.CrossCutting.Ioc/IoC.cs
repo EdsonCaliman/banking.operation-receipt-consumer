@@ -10,6 +10,7 @@ namespace Banking.Operation.Receipt.Consumer.CrossCutting.Ioc
         {
             MongoDbModule.Register(services, configuration);
             DataModule.Register(services, configuration);
+            DomainModule.Register(services, configuration);
             AutoMapperModule.Register(services);
             services.Register(configuration);
 

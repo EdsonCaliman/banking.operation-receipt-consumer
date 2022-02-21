@@ -10,9 +10,9 @@ namespace Banking.Operation.Receipt.Consumer.Infra.Data.Repositories
     {
         protected IMongoCollection<ReceiptEntity> Collection { get; private set; }
 
-        protected ReceiptRepository(IMongoDatabase database, string collectionName)
+        public ReceiptRepository(IMongoDatabase database)
         {
-            Collection = database.GetCollection<ReceiptEntity>(collectionName);
+            Collection = database.GetCollection<ReceiptEntity>("Receipts");
         }
 
         public async Task AddAsync(ReceiptEntity entity)
